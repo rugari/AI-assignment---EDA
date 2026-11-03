@@ -1,2 +1,13 @@
-# AI-assignment---EDA
+# AI-assignment -EDA
+
 Using AI to recreate an EDA and ML analysis for detecting fraudulent transactions
+
+I used Claude Opus 5.5 on Medium effort to recreate the EDA and ML credit card fraud analysis that we looked at in class. Without using any of the code or text from the example in class, i followed the same format for the pipeline: data cleaning, univariate analysis, bivariate analysis, then ML.
+
+# Reflection
+
+I found there to be a lot of benefits for agentic development in Data Science. The (frontier) llm, having access to the dataset, can already understand what the context is and the methods to get the optimal parameters (especially in ML). A lot of the tedious work such as pre-processing can be delegated to the AI with a human in the loop to allow the data scientist to focus more on the model and evals.
+
+I do still believe that, in almost every field, it is fundamental to learn the foundations and first principles to know how to guide the AI and understand the work you are delegating to the AI. It would be hard for a person who didn't understand the fundamentals of data science to present on this experiment without understanding the pipeline and the different decisions that were made at each stage. For example, in this notebook (in the ML steps) I prompted the agent to use the elbow method to find the best k when it first selected 5 - which I knew was 3 from the class example. If I did not know what hyperparams were or which ones to use,  I would have conducted a poor experiment. AI is getting better at one-shoting such examples I've described, but we don't want to be building extremely complex systems that we don't understand ourselves and could depend on - if it is a large scale project.
+
+An occasion at which I verify and changed the response I got from the agent was when it chose k = 5. Instead of correcting it to k = 3, i asked it to used a method to find the optimal k and it arrived to k = 3. Another change I had to make was the agent automatically used a log scale for some features in histograms and scatterplots. The agent's reasoning was the extreme values that strecthed the axes. This was a reasonable action but I believe the assignment was to replicate the original pipeline so I reversed that decision to show the raw distribution. I used a pretty frontier model so most of the responses were accurate especially comparing the charts to what was in the original example.
